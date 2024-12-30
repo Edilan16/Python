@@ -49,8 +49,30 @@ contrário disso:
 
 O segundo dígito do CPF é 0
 """
+import re  # expressão regular
+import sys  # para usar o exit() para sair do python
+entrada = input('CPF [746.824.890-70]: ')
+cpf_enviado_usuario = re.sub(
 
-cpf_enviado_usuario = '74682489070'
+r'[^0-9]',
+'', # expressão regular substitui tudo que não for numero para nada
+entrada
+
+)
+
+#----------------------------
+
+# cpf_enviado_usuario = '746.824.890-70'\
+#     .replace('.','')\
+#     .replace(' ','')\
+#     .replace('-','')# substitui os traços, ponto e espaços por nada
+
+#------------------------------------
+entrada_e_sequencial = entrada ==entrada[0]*len(entrada)
+if entrada_e_sequencial:
+    print('Você enviou dados sequênciais.')
+    sys.exit()
+
 nove_digitos = cpf_enviado_usuario[:9]
 contador_regressivo_1 = 10
 
