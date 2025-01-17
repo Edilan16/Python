@@ -12,6 +12,7 @@ alunos = [
     {'nome': 'Anderson', 'nota': 'C'},
 ]
  
+ 
 def ordena(aluno):
      return aluno['nota']
  
